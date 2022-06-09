@@ -1,13 +1,22 @@
+# URL to the latest Ubutnu VM image
 CLOUD_INIT_IMAGE_URL=https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img
 
+# SSH public key configured for the template
 TEMPLATE_SSH_PUBLIC_KEY=ssh-rsa AAAAB[...]kaCwH your.email@gmail.com
+
+# SSH user configured for the template
 TEMPLATE_SSH_USER=wanted_ssh_user
 
+# Proxmox settings
 PKR_VAR_proxmox_url=https://10.10.10.10:8006/api2/json
 PKR_VAR_proxmox_username=root@pam
 PKR_VAR_proxmox_password=yourpassword
 
+# Proxmox node name
 PKR_VAR_proxmox_host_node=pve
+
+# Proxmox default network bridge name
 PKR_VAR_proxmox_network_bridge=vmbr0
 
+# Proxmox storage name, can be found through the UI
 PVE_DISK_STORAGE=local-lvm
