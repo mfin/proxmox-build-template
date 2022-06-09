@@ -1,0 +1,11 @@
+[Unit]
+Description=Run build-template nightly
+Requires=build-template.service
+
+[Timer]
+Unit=build-template.service
+OnCalendar=*-*-* 00:15:00
+AccuracySec=1us
+
+[Install]
+WantedBy=timers.target

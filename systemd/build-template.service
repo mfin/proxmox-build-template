@@ -1,0 +1,7 @@
+[Unit]
+Description=Build VM template
+Wants=build-template.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/make -C /opt/build-template

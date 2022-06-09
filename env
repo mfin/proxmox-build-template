@@ -1,0 +1,13 @@
+CLOUD_INIT_IMAGE_URL=https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img
+
+TEMPLATE_SSH_PUBLIC_KEY=ssh-rsa AAAAB[...]kaCwH your.email@gmail.com
+TEMPLATE_SSH_USER=wanted_ssh_user
+
+PKR_VAR_proxmox_url=https://10.10.10.10:8006/api2/json
+PKR_VAR_proxmox_username=root@pam
+PKR_VAR_proxmox_password=yourpassword
+
+PKR_VAR_proxmox_host_node=pve
+PKR_VAR_proxmox_network_bridge=vmbr0
+
+PVE_DISK_STORAGE=local-lvm
