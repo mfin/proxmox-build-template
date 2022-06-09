@@ -1,6 +1,6 @@
 # proxmox-build-template
 
-A project which builds a cloud-init enabled Ubuntu VM template on Proxmox. Improvements can be made, but it works OOTB as is.
+A project which builds a cloud-init enabled Ubuntu VM template on Proxmox. Improvements can be made, but it works OOTB as is, just make sure, that VM IDs 8999 and 9000 are not taken yet.
 
 Nightly job first fetches the latest cloud-init enabled Ubuntu VM image, then prepares a Proxmox VM to template, `packer` creates a template from that prepared VM and configures the template with cloud-init defaults (SSH user and public key association). It also sends a notification with `pvemailforward`.
 
