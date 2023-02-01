@@ -2,7 +2,7 @@
 
 A project which builds a cloud-init enabled Ubuntu VM template on Proxmox. Improvements can be made, but it works OOTB as is, just make sure, that VM IDs 8999 and 9000 are not taken yet.
 
-Nightly job first fetches the latest cloud-init enabled Ubuntu VM image, then prepares a Proxmox VM to template, `packer` creates a template from that prepared VM and configures the template with cloud-init defaults (SSH user and public key association). It also sends a notification with `pvemailforward`.
+Nightly job first fetches the latest cloud-init enabled Ubuntu VM image, then prepares a Proxmox VM to template, `packer` creates a template from that prepared VM and configures the template with cloud-init defaults (SSH user and public key association). If the systemd service fails for any reason, it's configured to trigger the `notify-email@%i.service`. It also sends a notification with `proxmox-mail-forward` on successful build.
 
 ## Installation
 
@@ -42,4 +42,3 @@ make install
 systemctl daemon-reload
 systemctl enable --now build-template.timer
 ```
-
