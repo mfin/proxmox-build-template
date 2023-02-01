@@ -38,6 +38,7 @@ source "proxmox-clone" "ubuntu" {
   task_timeout = "5m"
 
   template_name = "${var.proxmox_template_name}"
+  template_description = "Built at ${timestamp()} by Packer"
   clone_vm      = "${var.proxmox_source_template}"
   
   os              = "l26"
@@ -64,6 +65,6 @@ build {
   sources = ["source.proxmox-clone.ubuntu"]
 
   provisioner "shell" {
-    inline = ["sudo cloud-init clean"]
+    script = "bin/bootstrap.sh"
   }
 }

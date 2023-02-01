@@ -7,7 +7,7 @@ pre:
 	bash bin/pre.sh
 
 packer:
-	packer build ubuntu-22.04.pkr.hcl
+	packer build ubuntu-ci.pkr.hcl
 
 post:
 	bash bin/post.sh

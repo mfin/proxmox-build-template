@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
 
 TMP_IMG_NAME="/tmp/ubuntu.qcow2"
 
@@ -11,7 +13,8 @@ wget -O $TMP_IMG_NAME $CLOUD_INIT_IMAGE_URL
 
 virt-customize --install qemu-guest-agent -a $TMP_IMG_NAME
 
-qm destroy 9000 --purge
+qm destroy 9000 --purge || echo "Template already missing."
+qm destroy 8999 --purge || echo "VM already missing."
 
 qm create $VMID --name $TEMPL_NAME --memory $MEM --net0 virtio,bridge=$PKR_VAR_proxmox_network_bridge
 qm importdisk $VMID $TMP_IMG_NAME $PVE_DISK_STORAGE

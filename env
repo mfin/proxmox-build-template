@@ -1,5 +1,5 @@
 # URL to the latest Ubutnu VM image
-CLOUD_INIT_IMAGE_URL=https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img
+CLOUD_INIT_IMAGE_URL=https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img
 
 # SSH public key configured for the template
 TEMPLATE_SSH_PUBLIC_KEY=ssh-rsa AAAAB[...]kaCwH your.email@gmail.com

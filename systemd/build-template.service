@@ -1,6 +1,7 @@
 [Unit]
 Description=Build VM template
 Wants=build-template.timer
+OnFailure=notify-email@%i.service
 
 [Service]
 Type=oneshot
